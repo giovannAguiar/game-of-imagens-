@@ -1,0 +1,164 @@
+/* Estilo do menu principal */
+nav {
+    background-color: pink;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: palevioletred;
+}
+
+.btn-login {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    background-color: palevioletred;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+/* Estilo do dropdown */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: pink;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    padding: 0;
+}
+
+nav ul li .dropdown-content li a {
+    padding: 10px 15px;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Menu hamburguer para telas menores */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background-color: pink;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+    }
+}
+
+/* Resetando margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilos para a galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta automaticamente a quantidade de colunas */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Estilos para os itens da galeria */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 254, 254, 0.1);
+}
+
+/* Estilos para as imagens */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que as imagens cubram toda a área sem distorção */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de zoom nas imagens */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsividade: ajusta as colunas em telas menores */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
